@@ -28,6 +28,6 @@ PoW:
 - diff retarget each block
 
 ports:
-connection:	19118
+connection:	17118
 RPC:			19119
 

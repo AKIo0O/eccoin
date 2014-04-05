@@ -2263,7 +2263,7 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
 
     // If don't already have its previous block, shunt it off to holding area until we get it
     // if (!mapBlockIndex.count(pblock->hashPrevBlock))
-    if (false)
+    if (!mapBlockIndex.count(pblock->hashPrevBlock))
     {
         printf("ProcessBlock: ORPHAN BLOCK, prev=%s\n", pblock->hashPrevBlock.ToString().substr(0,20).c_str());
         CBlock* pblock2 = new CBlock(*pblock);
