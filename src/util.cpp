@@ -1006,7 +1006,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "ECCoin";
+    const char* pszModule = "superappcoin";
 #endif
     if (pex)
         return strprintf(
@@ -1055,13 +1055,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\ECCoin
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\ECCoin
-    // Mac: ~/Library/Application Support/ECCoin
-    // Unix: ~/.ECCoin
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\superappcoin
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\superappcoin
+    // Mac: ~/Library/Application Support/superappcoin
+    // Unix: ~/.superappcoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "ECCoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "superappcoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -1073,10 +1073,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-    return pathRet / "ECCoin";
+    return pathRet / "superappcoin";
 #else
     // Unix
-    return pathRet / ".ECCoin";
+    return pathRet / ".superappcoin";
 #endif
 #endif
 }
@@ -1118,7 +1118,7 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "ECCoin.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "superappcoin.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1149,7 +1149,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "ECCoind.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "superappcoind.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }
@@ -1289,10 +1289,10 @@ void AddTimeData(const CNetAddr& ip, int64 nTime)
                 if (!fMatch)
                 {
                     fDone = true;
-                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong ECCoin will not work properly.");
+                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong superappcoin will not work properly.");
                     strMiscWarning = strMessage;
                     printf("*** %s\n", strMessage.c_str());
-                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("ECCoin"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);
+                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("superappcoin"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);
                 }
             }
         }

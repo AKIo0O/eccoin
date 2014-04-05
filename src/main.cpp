@@ -41,11 +41,11 @@ static CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 static CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 20);
 static CBigNum bnProofOfStakeLimitTestNet(~uint256(0) >> 20);
 
-unsigned int nStakeMinAge = 60 * 60 * 24 * 42;	// minimum age for coin age: 42d
-unsigned int nStakeMaxAge = 60 * 60 * 24 * 84;	// stake age of full weight: 84d
+unsigned int nStakeMinAge = 60 * 60 * 24 * 1;	// minimum age for coin age: 42d
+unsigned int nStakeMaxAge = 60 * 60 * 24 * 3;	// stake age of full weight: 84d
 unsigned int nStakeTargetSpacing = 45;			// 45 sec block spacing
 
-int64 nChainStartTime = 1393744287;
+int64 nChainStartTime = 1396724982;
 int nCoinbaseMaturity = 30;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -68,7 +68,7 @@ map<uint256, map<uint256, CDataStream*> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "ECCoin Signed Message:\n";
+const string strMessageMagic = "SACoin Signed Message:\n";
 
 double dHashesPerSec;
 int64 nHPSTimerStart;
@@ -956,7 +956,7 @@ int64 GetProofOfWorkReward(int nHeight, int64 nFees, uint256 prevHash)
 	std::string cseed_str = prevHash.ToString().substr(15,7);
 	const char* cseed = cseed_str.c_str();
 	long seed = hex2long(cseed);
-	nSubsidy += generateMTRandom(seed, 200000) * COIN;
+	nSubsidy += generateMTRandom(seed, 100000) * COIN;
 
     return nSubsidy + nFees;
 }
@@ -1501,8 +1501,8 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
     // Now that the whole chain is irreversibly beyond that time it is applied to all blocks except the
     // two in the chain that violate it. This prevents exploiting the issue against nodes in their
     // initial block download.
-    bool fEnforceBIP30 = true; // Always active in ECCoin
-    bool fStrictPayToScriptHash = true; // Always active in ECCoin
+    bool fEnforceBIP30 = true; // Always active in superappcoin
+    bool fStrictPayToScriptHash = true; // Always active in superappcoin
 
     //// issue here: it doesn't know the version
     unsigned int nTxPos;
@@ -2448,7 +2448,7 @@ bool CheckDiskSpace(uint64 nAdditionalBytes)
         string strMessage = _("Warning: Disk space is low!");
         strMiscWarning = strMessage;
         printf("*** %s\n", strMessage.c_str());
-        uiInterface.ThreadSafeMessageBox(strMessage, "ECCoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
+        uiInterface.ThreadSafeMessageBox(strMessage, "superappcoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
         StartShutdown();
         return false;
     }

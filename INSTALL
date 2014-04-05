@@ -1,9 +1,9 @@
-Building ECCoin
+Building superappcoin
 
-See doc/readme-qt.rst for instructions on building ECCoin QT,
+See doc/readme-qt.rst for instructions on building superappcoin QT,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of ECCoin.
+implementation of superappcoin.
 
-See doc/build-*.txt for instructions on building ECCoind,
+See doc/build-*.txt for instructions on building superappcoind,
 the intended-for-services, no-graphical-interface, reference
-implementation of ECCoin.
+implementation of superappcoin.

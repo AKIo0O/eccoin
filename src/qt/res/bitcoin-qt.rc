@@ -1,4 +1,4 @@
-IDI_ICON1 ICON DISCARDABLE "icons/ECCoin.ico"
+IDI_ICON1 ICON DISCARDABLE "icons/superappcoin.ico"
 
 #include <windows.h>             // needed for VERSIONINFO
 #include "../../clientversion.h" // holds the needed client version information
@@ -18,14 +18,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "ECCoin"
-            VALUE "FileDescription",    "ECCoin-Qt (OSS GUI client for ECCoin)"
+            VALUE "CompanyName",        "superappcoin"
+            VALUE "FileDescription",    "superappcoin-Qt (OSS GUI client for superappcoin)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "ECCoin-qt"
-            VALUE "LegalCopyright",     "2009-2012 The Bitcoin developers, 2012-2013 The ECCoin & PPCoin developers"
+            VALUE "InternalName",       "superappcoin-qt"
+            VALUE "LegalCopyright",     "2009-2012 The Bitcoin developers, 2012-2013 The superappcoin & PPCoin developers"
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "ECCoin-qt.exe"
-            VALUE "ProductName",        "ECCoin-Qt"
+            VALUE "OriginalFilename",   "superappcoin-qt.exe"
+            VALUE "ProductName",        "superappcoin-Qt"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

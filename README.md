@@ -1,9 +1,9 @@
 
-ECCoin - ECC
+superappcoin - SBC
 
-ECCoin is an energy saving coin generating most of its coins through PoS blocks. It distributes its initial coins through 45 days evenly distributed PoW mining, no halves during the initial distribution phase, thus ensures a fair distribution. After initial distribution, the PoW block payout will be dropped to 1 coin per block. The main coin generation will be done through the PoS generations.
+superappcoin is an energy saving coin generating most of its coins through PoS blocks. It distributes its initial coins through 45 days evenly distributed PoW mining, no halves during the initial distribution phase, thus ensures a fair distribution. After initial distribution, the PoW block payout will be dropped to 1 coin per block. The main coin generation will be done through the PoS generations.
 
-ECCoin also adopts a variable PoS rate with the following annual interest rate:
+superappcoin also adopts a variable PoS rate with the following annual interest rate:
 - Year 1: 25% 
 - Year 2: 15%
 - Year 3-9: 10%
